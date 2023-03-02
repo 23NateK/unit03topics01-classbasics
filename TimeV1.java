@@ -29,13 +29,17 @@ public String toString(){
         }else{
         result+=minutes+":";
         }
+        if(seconds<10){
+            result+="0"+seconds;
+        }else{
         result+=seconds;
+        }
         return result;
 }
 
 
     public static void main(String[] args) {
-        TimeV1 time = new TimeV1(7,02,23);
+        TimeV1 time = new TimeV1(7,2,4);
         System.out.println(time.toString());
 
     }
