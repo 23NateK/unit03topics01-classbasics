@@ -29,9 +29,12 @@ public String toString(){
         }else{
         result+=minutes+":";
         }
-        if(seconds<10){
+        if(seconds<1){
+            result+="00";
+        }else if(seconds<10){
             result+="0"+seconds;
-        }else{
+        }
+        else{
         result+=seconds;
         }
         return result;
