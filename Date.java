@@ -32,13 +32,19 @@ public class Date {
         }else{
         result+=day+"/";
         }
-        result+=year;
+        if (year>23&&year<1000){
+            result+="19"+year;
+        }else if(year<1000){
+        result+="20"+year;
+        }else{
+            result+=year;
+        }
         return result;
     }
 
     public static void main(String[] args) {
         Date d1;
-        d1 = new Date(4,9,1999);
+        d1 = new Date(4,9,2004);
         System.out.println(d1.toString());
     }
 
