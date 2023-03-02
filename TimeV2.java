@@ -30,7 +30,7 @@ public String toString(){
         return result;
 }
     public static void main(String[] args) {
-        TimeV2 time = new TimeV2(7,2,4);
+        TimeV2 time = new TimeV2(7,2,0);
         System.out.println(time.toString());
     }
 }
