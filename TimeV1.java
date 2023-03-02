@@ -17,7 +17,21 @@ public class TimeV1 {
     public int getSeconds(){
         return seconds;
     }
-
+public String toString(){
+    String result="";
+        if (hours<10){
+            result+="0"+hours+":";
+        }else{
+        result+=hours+":";
+        }
+        if(minutes<10){
+            result+="0"+minutes+":";
+        }else{
+        result+=minutes+":";
+        }
+        result+=seconds;
+        return result;
+}
 
 
     public static void main(String[] args) {
