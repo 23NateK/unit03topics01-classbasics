@@ -33,10 +33,12 @@ public class Date {
         result+=day+"/";
         }
         // FIXME: I'm glad you checked for the year, but I don't think your logic quite works (see main method)
-        if (year>23&&year<1000){
-            result+="19"+year;
+        if(year<10){
+            result+="000"+year;
+        }else if(year<100){
+            result+="00"+year;
         }else if(year<1000){
-        result+="20"+year;
+            result+="0"+year;
         }else{
             result+=year;
         }
