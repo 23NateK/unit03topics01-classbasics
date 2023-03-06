@@ -32,6 +32,7 @@ public class Date {
         }else{
         result+=day+"/";
         }
+        // FIXME: I'm glad you checked for the year, but I don't think your logic quite works (see main method)
         if (year>23&&year<1000){
             result+="19"+year;
         }else if(year<1000){
@@ -46,6 +47,13 @@ public class Date {
         Date d1;
         d1 = new Date(4,9,2004);
         System.out.println(d1.toString());
+
+        // TODO:
+        Date d2 = new Date(4, 14, 937);
+        System.out.println(d2); // expect: 04/14/0937
+
+        Date d3 = new Date(10, 2, 7);
+        System.out.println(d3);  // expect: 10/02/0007
     }
 
 }
