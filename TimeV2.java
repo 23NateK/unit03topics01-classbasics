@@ -4,32 +4,33 @@ public class TimeV2 {
     public TimeV2(int hours, int minutes, int seconds){
         timeSince=(hours*60*60)+(minutes*60)+seconds;
     }
-
-    // TODO: this method shouldn't exist (or at least shouldn't be public)... the README asked you to maintain the same constructors and instance methods as TimeV1 had
-    public int gettimeSince(){
-        return timeSince;
+    public int getHours(){
+        return timeSince/60/60;
     }
-
-    // TODO: write getHours, getMinutes, getSeconds. These will end up being snippets that already appear in your toString method (therefore you could clean your toString up a bit by defining then using them)
+    public int getMinutes(){
+        return timeSince/60%60;
+    }
+    public int getSeconds(){
+        return timeSince-(timeSince/60/60*60*60)-(timeSince/60%60*60);
+    }
 public String toString(){
     String result="";
-        if((timeSince/60/60)<10){
-            result+="0"+(timeSince/60/60)+":";
+        if(getHours()<10){
+            result+="0"+getHours()+":";
         }else{
-            result+=(timeSince/60/60)+":";
+            result+=getHours()+":";
         }
-        if((timeSince/60%60)<10){
-            result+="0"+(timeSince/60%60)+":";
+        if(getMinutes()<10){
+            result+="0"+getMinutes()+":";
         }else{
-            result+=(timeSince/60%60)+":";
+            result+=getMinutes()+":";
         }
-        //don't question this
-        if((timeSince-(timeSince/60/60*60*60)-(timeSince/60%60*60))<1){
+        if(getSeconds()<1){
             result+="00";
-        }else if((timeSince-(timeSince/60/60*60*60)-(timeSince/60%60*60))<10){
-            result+="0"+(timeSince-(timeSince/60/60*60*60)-(timeSince/60%60*60));
+        }else if(getSeconds()<10){
+            result+="0"+getSeconds();
         }else{
-            result+=(timeSince-(timeSince/60/60*60*60)-(timeSince/60%60*60));
+            result+=getSeconds();
         }
         return result;
 }
