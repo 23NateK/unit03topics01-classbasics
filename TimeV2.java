@@ -4,9 +4,13 @@ public class TimeV2 {
     public TimeV2(int hours, int minutes, int seconds){
         timeSince=(hours*60*60)+(minutes*60)+seconds;
     }
+
+    // TODO: this method shouldn't exist (or at least shouldn't be public)... the README asked you to maintain the same constructors and instance methods as TimeV1 had
     public int gettimeSince(){
         return timeSince;
     }
+
+    // TODO: write getHours, getMinutes, getSeconds. These will end up being snippets that already appear in your toString method (therefore you could clean your toString up a bit by defining then using them)
 public String toString(){
     String result="";
         if((timeSince/60/60)<10){
